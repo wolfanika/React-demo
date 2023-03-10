@@ -1,0 +1,97 @@
+@import "../../global.scss";
+
+
+.portfolio{
+    background-color: lightskyblue; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: beige;
+
+    h1{
+        font-size: 50px;
+        margin: 20px;
+        
+      
+
+        @include mobile{
+            font-size: 20px;
+        }
+    }
+
+    ul{
+        margin: 10px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        
+
+        @include mobile{
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0;
+           
+            
+        }
+
+
+        
+    }
+
+    .container{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include mobile{
+            width: 100%;
+        }
+
+        .item{
+            width: 14vw;
+                height: 20vh;
+            // width: 220px;
+            // height: 150px;
+            border-radius: 20px;
+            border: 1px solid whitesmoke;
+            margin: 10px 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: aliceblue;
+            position: relative;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            @include mobile{
+                width: 8vw;
+                height: 15vh;
+            }
+
+            h3{
+                position: absolute;
+                font-size: 20px;
+
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit:cover ;
+                z-index: 1;
+            }
+
+            &:hover{
+                background-color: $mainColor;
+                transition: all 1s ease;
+                transform: scale(1.1);
+                img{
+                    opacity: 0.2;
+                    z-index: 0;
+                }
+            }
+        }
+    }
+}
